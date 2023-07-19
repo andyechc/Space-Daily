@@ -1,10 +1,34 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 
-export default function Header() {
+function Header({ text }) {
   return (
-    <View>
-      <Text>Explore</Text>
-      <Image source={require("../../assets/icon.png")} />
+    <View style={styles.container}>
+        <Text style={styles.title}>{text}</Text>
+      
+        <Image
+          style={styles.img}
+          source={require("../../../assets/nasa-logo.png")}
+        />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+
+  title: {
+    fontSize: 18,
+    color: "#aaa",
+  },
+
+  img: {
+    width: 60,
+    height: 60,
+  },
+});
+
+export default Header;
